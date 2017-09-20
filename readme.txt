@@ -2,7 +2,7 @@
 
                     This program was create by Popov Evgeniy Alekseyevich
 
-                             Version 0.6
+                             Version 0.7
 
 System requirement
 
@@ -32,4 +32,4 @@ Change log
 0.2 - 0.3 - Small changes
 0.4 - Small bug was fixed
 0.5 - Small changes
-0.6 - Small bug was fixed
+0.6 - 0.7 - Small bug was fixed
