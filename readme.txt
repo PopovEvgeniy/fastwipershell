@@ -2,7 +2,7 @@
 
                     This program was create by Popov Evgeniy Alekseyevich
 
-                             Version 0.7
+                             Version 0.7.0.1
 
 System requirement
 
@@ -15,7 +15,7 @@ Put executable file of FAST WIPER to FAST WIPER SHELL directory before first sta
 
 License
 
-This program distrubuted under GNU GENERAL PUBLIC LICENSE.
+This program distributed under GNU GENERAL PUBLIC LICENSE.
 
 Contact
 
@@ -33,3 +33,4 @@ Change log
 0.4 - Small bug was fixed
 0.5 - Small changes
 0.6 - 0.7 - Small bug was fixed
+0.7.0.1 – Documentation was updated
