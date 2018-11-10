@@ -81,7 +81,7 @@ end;
 procedure window_setup();
 begin
  Application.Title:='FAST WIPER SHELL';
- Form1.Caption:='FAST WIPER SHELL 0.7';
+ Form1.Caption:='FAST WIPER SHELL 0.7.0.2';
  Form1.BorderStyle:=bsDialog;
  Form1.Font.Name:=Screen.MenuFont.Name;
  Form1.Font.Size:=14;
