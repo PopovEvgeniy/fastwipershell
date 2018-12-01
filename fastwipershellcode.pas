@@ -20,7 +20,6 @@ type
     procedure Button1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure LabeledEdit1Change(Sender: TObject);
-    procedure LabeledEdit1KeyPress(Sender: TObject; var Key: char);
     procedure LabeledEdit2Change(Sender: TObject);
     procedure LabeledEdit2KeyPress(Sender: TObject; var Key: char);
   private
@@ -32,7 +31,6 @@ type
 var Form1: TForm1;
 function check_input(input:string):Boolean;
 procedure wipe_disk(passes:string;disk:string);
-procedure restrict_pass_input(var key:char);
 procedure restrict_drive_input(var key:char);
 procedure window_setup();
 procedure interface_setup();
@@ -60,15 +58,6 @@ Form1.Process1.Parameters.Add(disk);
 Form1.Process1.Execute();
 end;
 
-procedure restrict_pass_input(var key:char);
-begin
-if not(key in ['0'..'9']) then
-begin
-if ord(key)<>VK_BACK then key:=#0;
-end;
-
-end;
-
 procedure restrict_drive_input(var key:char);
 begin
 if not(key in ['A'..'Z','a'..'z']) then
@@ -81,7 +70,7 @@ end;
 procedure window_setup();
 begin
  Application.Title:='FAST WIPER SHELL';
- Form1.Caption:='FAST WIPER SHELL 0.7.0.2';
+ Form1.Caption:='FAST WIPER SHELL 0.7.1';
  Form1.BorderStyle:=bsDialog;
  Form1.Font.Name:=Screen.MenuFont.Name;
  Form1.Font.Size:=14;
@@ -90,6 +79,7 @@ end;
 procedure interface_setup();
 begin
 Form1.Button1.Enabled:=False;
+Form1.LabeledEdit1.NumbersOnly:=True;
 Form1.LabeledEdit1.MaxLength:=3;
 Form1.LabeledEdit2.MaxLength:=1;
 Form1.LabeledEdit1.LabelPosition:=lpLeft;
@@ -124,11 +114,6 @@ end;
 procedure TForm1.LabeledEdit1Change(Sender: TObject);
 begin
 Form1.Button1.Enabled:=check_input(Form1.LabeledEdit1.Text) and check_input(Form1.LabeledEdit2.Text);
-end;
-
-procedure TForm1.LabeledEdit1KeyPress(Sender: TObject; var Key: char);
-begin
-restrict_pass_input(key);
 end;
 
 procedure TForm1.LabeledEdit2Change(Sender: TObject);
