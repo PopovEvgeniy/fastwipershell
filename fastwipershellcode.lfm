@@ -7,21 +7,14 @@ object Form1: TForm1
   ClientHeight = 128
   ClientWidth = 261
   OnCreate = FormCreate
-  LCLVersion = '1.8.4.0'
+  LCLVersion = '2.0.10.0'
   object LabeledEdit1: TLabeledEdit
     Left = 203
-    Height = 21
+    Height = 23
     Top = 8
     Width = 48
-    EditLabel.AnchorSideTop.Control = LabeledEdit1
-    EditLabel.AnchorSideTop.Side = asrCenter
-    EditLabel.AnchorSideRight.Control = LabeledEdit1
-    EditLabel.AnchorSideBottom.Control = LabeledEdit1
-    EditLabel.AnchorSideBottom.Side = asrBottom
-    EditLabel.Left = 89
-    EditLabel.Height = 13
-    EditLabel.Top = 12
-    EditLabel.Width = 111
+    EditLabel.Height = 15
+    EditLabel.Width = 123
     EditLabel.Caption = 'Amount of wipe passes'
     EditLabel.ParentColor = False
     LabelPosition = lpLeft
@@ -31,18 +24,11 @@ object Form1: TForm1
   end
   object LabeledEdit2: TLabeledEdit
     Left = 147
-    Height = 21
+    Height = 23
     Top = 56
     Width = 48
-    EditLabel.AnchorSideTop.Control = LabeledEdit2
-    EditLabel.AnchorSideTop.Side = asrCenter
-    EditLabel.AnchorSideRight.Control = LabeledEdit2
-    EditLabel.AnchorSideBottom.Control = LabeledEdit2
-    EditLabel.AnchorSideBottom.Side = asrBottom
-    EditLabel.Left = 90
-    EditLabel.Height = 13
-    EditLabel.Top = 60
-    EditLabel.Width = 54
+    EditLabel.Height = 15
+    EditLabel.Width = 57
     EditLabel.Caption = 'Drive letter'
     EditLabel.ParentColor = False
     LabelPosition = lpLeft
@@ -73,7 +59,7 @@ object Form1: TForm1
     WindowTop = 0
     WindowWidth = 0
     FillAttribute = 0
-    left = 216
-    top = 48
+    Left = 216
+    Top = 48
   end
 end

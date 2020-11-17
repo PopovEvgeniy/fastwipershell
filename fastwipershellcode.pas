@@ -39,26 +39,26 @@ implementation
 
 procedure wipe_disk(passes:string;disk:string);
 begin
-Form1.Process1.Executable:=ExtractFilePath(Application.ExeName)+'fastwiper';
-Form1.Process1.Parameters.Clear();
-Form1.Process1.Parameters.Add(passes);
-Form1.Process1.Parameters.Add(disk);
-Form1.Process1.Execute();
+ Form1.Process1.Executable:=ExtractFilePath(Application.ExeName)+'fastwiper';
+ Form1.Process1.Parameters.Clear();
+ Form1.Process1.Parameters.Add(passes);
+ Form1.Process1.Parameters.Add(disk);
+ Form1.Process1.Execute();
 end;
 
 procedure restrict_drive_input(var key:char);
 begin
-if not(key in ['A'..'Z','a'..'z']) then
-begin
-if ord(key)<>VK_BACK then key:=#0;
-end;
+ if not(key in ['A'..'Z','a'..'z']) then
+ begin
+  if ord(key)<>VK_BACK then key:=#0;
+ end;
 
 end;
 
 procedure window_setup();
 begin
  Application.Title:='FAST WIPER SHELL';
- Form1.Caption:='FAST WIPER SHELL 0.7.2';
+ Form1.Caption:='FAST WIPER SHELL 0.7.3';
  Form1.BorderStyle:=bsDialog;
  Form1.Font.Name:=Screen.MenuFont.Name;
  Form1.Font.Size:=14;
@@ -66,21 +66,21 @@ end;
 
 procedure interface_setup();
 begin
-Form1.Button1.Enabled:=False;
-Form1.LabeledEdit1.NumbersOnly:=True;
-Form1.LabeledEdit1.MaxLength:=3;
-Form1.LabeledEdit2.MaxLength:=1;
-Form1.LabeledEdit1.LabelPosition:=lpLeft;
-Form1.LabeledEdit2.LabelPosition:=lpLeft;
-Form1.LabeledEdit1.Text:='';
-Form1.LabeledEdit2.Text:='';
+ Form1.Button1.Enabled:=False;
+ Form1.LabeledEdit1.NumbersOnly:=True;
+ Form1.LabeledEdit1.MaxLength:=3;
+ Form1.LabeledEdit2.MaxLength:=1;
+ Form1.LabeledEdit1.LabelPosition:=lpLeft;
+ Form1.LabeledEdit2.LabelPosition:=Form1.LabeledEdit1.LabelPosition;
+ Form1.LabeledEdit1.Text:='';
+ Form1.LabeledEdit2.Text:=Form1.LabeledEdit1.Text;
 end;
 
 procedure language_setup();
 begin
-Form1.Button1.Caption:='Wipe';
-Form1.LabeledEdit1.EditLabel.Caption:='Amount of wipe passes';;
-Form1.LabeledEdit2.EditLabel.Caption:='Drive letter';
+ Form1.Button1.Caption:='Wipe';
+ Form1.LabeledEdit1.EditLabel.Caption:='Amount of wipe passes';;
+ Form1.LabeledEdit2.EditLabel.Caption:='Drive letter';
 end;
 
 {$R *.lfm}
@@ -89,29 +89,29 @@ end;
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin
-window_setup();
-interface_setup();
-language_setup();
+ window_setup();
+ interface_setup();
+ language_setup();
 end;
 
 procedure TForm1.Button1Click(Sender: TObject);
 begin
-wipe_disk(Form1.LabeledEdit1.Text,Form1.LabeledEdit2.Text);
+ wipe_disk(Form1.LabeledEdit1.Text,Form1.LabeledEdit2.Text);
 end;
 
 procedure TForm1.LabeledEdit1Change(Sender: TObject);
 begin
-Form1.Button1.Enabled:=(Form1.LabeledEdit1.Text<>'') and (Form1.LabeledEdit2.Text<>'');
+ Form1.Button1.Enabled:=(Form1.LabeledEdit1.Text<>'') and (Form1.LabeledEdit2.Text<>'');
 end;
 
 procedure TForm1.LabeledEdit2Change(Sender: TObject);
 begin
-Form1.Button1.Enabled:=(Form1.LabeledEdit1.Text<>'') and (Form1.LabeledEdit2.Text<>'');
+ Form1.Button1.Enabled:=(Form1.LabeledEdit1.Text<>'') and (Form1.LabeledEdit2.Text<>'');
 end;
 
 procedure TForm1.LabeledEdit2KeyPress(Sender: TObject; var Key: char);
 begin
-restrict_drive_input(key);
+ restrict_drive_input(key);
 end;
 
 end.
