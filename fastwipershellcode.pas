@@ -29,11 +29,6 @@ type
   end;
 
 var Form1: TForm1;
-procedure wipe_disk(passes:string;disk:string);
-procedure restrict_drive_input(var key:char);
-procedure window_setup();
-procedure interface_setup();
-procedure language_setup();
 
 implementation
 
@@ -48,7 +43,7 @@ end;
 
 procedure restrict_drive_input(var key:char);
 begin
- if not(key in ['A'..'Z','a'..'z']) then
+ if not (LowerCase(key) in ['a'..'z']) then
  begin
   if ord(key)<>VK_BACK then key:=#0;
  end;
@@ -58,7 +53,7 @@ end;
 procedure window_setup();
 begin
  Application.Title:='FAST WIPER SHELL';
- Form1.Caption:='FAST WIPER SHELL 0.7.3';
+ Form1.Caption:='FAST WIPER SHELL 0.7.4';
  Form1.BorderStyle:=bsDialog;
  Form1.Font.Name:=Screen.MenuFont.Name;
  Form1.Font.Size:=14;
