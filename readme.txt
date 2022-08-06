@@ -2,12 +2,12 @@
 
                     This software made by Popov Evgeniy Alekseyevich
 
-                             Version 0.7.4
+                             Version 0.7.4.1
 
 System requirement
 
-Windows 2000 or higher for 32 bit system
-Windows Vista or higher for 64 bit system
+Windows 2000 or higher for 32-bit system
+Windows Vista or higher for 64-bit system
 
 Program description
 
@@ -35,5 +35,6 @@ Change log
 0.5 - Small changes
 0.6 - 0.7 - Small bug fixed
 0.7.0.1 – Documentation updated
-0.7.0.2 - 64 bit system support added
+0.7.0.2 - 64-bit systems support added
 0.7.1 - 0.7.4 - Small changes
+0.7.4.1 – Documentation updated
