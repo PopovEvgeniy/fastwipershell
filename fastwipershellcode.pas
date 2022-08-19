@@ -53,7 +53,7 @@ end;
 procedure window_setup();
 begin
  Application.Title:='FAST WIPER SHELL';
- Form1.Caption:='FAST WIPER SHELL 0.7.4';
+ Form1.Caption:='FAST WIPER SHELL 0.7.5';
  Form1.BorderStyle:=bsDialog;
  Form1.Font.Name:=Screen.MenuFont.Name;
  Form1.Font.Size:=14;
@@ -78,15 +78,20 @@ begin
  Form1.LabeledEdit2.EditLabel.Caption:='Drive letter';
 end;
 
+procedure setup();
+begin
+ window_setup();
+ interface_setup();
+ language_setup();
+end;
+
 {$R *.lfm}
 
 { TForm1 }
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin
- window_setup();
- interface_setup();
- language_setup();
+ setup();
 end;
 
 procedure TForm1.Button1Click(Sender: TObject);

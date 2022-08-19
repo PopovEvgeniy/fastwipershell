@@ -2,7 +2,7 @@
 
                     This software made by Popov Evgeniy Alekseyevich
 
-                             Version 0.7.4.1
+                             Version 0.7.5
 
 System requirement
 
@@ -12,7 +12,7 @@ Windows Vista or higher for 64-bit system
 Program description
 
 This program is a graphic shell for FAST WIPER.
-Put executable file of FAST WIPER to FAST WIPER SHELL directory before first start.
+Put the executable file of FAST WIPER to FAST WIPER SHELL directory before first start.
 
 License
 
@@ -38,3 +38,4 @@ Change log
 0.7.0.2 - 64-bit systems support added
 0.7.1 - 0.7.4 - Small changes
 0.7.4.1 – Documentation updated
+0.7.5 - Small changes
