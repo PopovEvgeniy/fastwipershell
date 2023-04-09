@@ -32,9 +32,9 @@ var Form1: TForm1;
 
 implementation
 
-procedure wipe_disk(passes:string;disk:string);
+procedure wipe_disk(const passes:string;const disk:string);
 begin
- Form1.Process1.Executable:=ExtractFilePath(Application.ExeName)+'fastwiper';
+ Form1.Process1.Executable:=ExtractFilePath(Application.ExeName)+'fastwiper.exe';
  Form1.Process1.Parameters.Clear();
  Form1.Process1.Parameters.Add(passes);
  Form1.Process1.Parameters.Add(disk);
@@ -53,7 +53,7 @@ end;
 procedure window_setup();
 begin
  Application.Title:='FAST WIPER SHELL';
- Form1.Caption:='FAST WIPER SHELL 0.7.5';
+ Form1.Caption:='FAST WIPER SHELL 0.7.6';
  Form1.BorderStyle:=bsDialog;
  Form1.Font.Name:=Screen.MenuFont.Name;
  Form1.Font.Size:=14;

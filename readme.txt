@@ -2,7 +2,7 @@
 
                     This software made by Popov Evgeniy Alekseyevich
 
-                             Version 0.7.5
+                             Version 0.7.6
 
 System requirement
 
@@ -25,7 +25,7 @@ You can send me a letter to tuzik87@inbox.ru
 About program modification
 
 Source code included in source.zip archive.
-It can be compiled under Lazarus 2.2.2 or higher.
+It can be compiled under Lazarus 2.2.6 or higher.
 
 Change log
 
@@ -38,4 +38,4 @@ Change log
 0.7.0.2 - 64-bit systems support added
 0.7.1 - 0.7.4 - Small changes
 0.7.4.1 – Documentation updated
-0.7.5 - Small changes
+0.7.5 - 0.7.6 - Small changes
