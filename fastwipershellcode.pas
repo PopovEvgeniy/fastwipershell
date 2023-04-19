@@ -35,13 +35,17 @@ implementation
 procedure wipe_disk(const passes:string;const disk:string);
 begin
  Form1.Process1.Executable:=ExtractFilePath(Application.ExeName)+'fastwiper.exe';
- Form1.Process1.Parameters.Clear();
- Form1.Process1.Parameters.Add(passes);
- Form1.Process1.Parameters.Add(disk);
- Form1.Process1.Execute();
+ if FileExists(Form1.Process1.Executable)=True then
+ begin
+  Form1.Process1.Parameters.Clear();
+  Form1.Process1.Parameters.Add(passes);
+  Form1.Process1.Parameters.Add(disk);
+  Form1.Process1.Execute();
+ end;
+
 end;
 
-procedure restrict_drive_input(var key:char);
+procedure restrict_input(var key:char);
 begin
  if not (LowerCase(key) in ['a'..'z']) then
  begin
@@ -53,7 +57,7 @@ end;
 procedure window_setup();
 begin
  Application.Title:='FAST WIPER SHELL';
- Form1.Caption:='FAST WIPER SHELL 0.7.6';
+ Form1.Caption:='FAST WIPER SHELL 0.7.7';
  Form1.BorderStyle:=bsDialog;
  Form1.Font.Name:=Screen.MenuFont.Name;
  Form1.Font.Size:=14;
@@ -111,7 +115,7 @@ end;
 
 procedure TForm1.LabeledEdit2KeyPress(Sender: TObject; var Key: char);
 begin
- restrict_drive_input(key);
+ restrict_input(key);
 end;
 
 end.
