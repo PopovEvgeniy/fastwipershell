@@ -5,7 +5,7 @@ unit fastwipershellcode;
 interface
 
 uses
-  Classes, SysUtils, process, LCLType, UTF8Process, Forms, Controls,
+  Classes, SysUtils, LCLType, UTF8Process, Forms, Controls,
   Graphics, ExtCtrls, StdCtrls;
 
 type
@@ -32,14 +32,14 @@ var Form1: TForm1;
 
 implementation
 
-procedure wipe_disk(const passes:string;const disk:string);
+procedure wipe_disk(var runner:TProcessUTF8;const passes:string;const disk:string);
 begin
- Form1.Process1.Executable:=ExtractFilePath(Application.ExeName)+'fastwiper.exe';
- Form1.Process1.Parameters.Clear();
- Form1.Process1.Parameters.Add(passes);
- Form1.Process1.Parameters.Add(disk);
+ runner.Executable:=ExtractFilePath(Application.ExeName)+'fastwiper.exe';
+ runner.Parameters.Clear();
+ runner.Parameters.Add(passes);
+ runner.Parameters.Add(disk);
  try
-  Form1.Process1.Execute();
+  runner.Execute();
  except
   ;
  end;
@@ -58,7 +58,7 @@ end;
 procedure window_setup();
 begin
  Application.Title:='FAST WIPER SHELL';
- Form1.Caption:='FAST WIPER SHELL 0.7.8';
+ Form1.Caption:='FAST WIPER SHELL 0.7.9';
  Form1.BorderStyle:=bsDialog;
  Form1.Font.Name:=Screen.MenuFont.Name;
  Form1.Font.Size:=14;
@@ -71,9 +71,9 @@ begin
  Form1.LabeledEdit1.MaxLength:=3;
  Form1.LabeledEdit2.MaxLength:=1;
  Form1.LabeledEdit1.LabelPosition:=lpLeft;
- Form1.LabeledEdit2.LabelPosition:=Form1.LabeledEdit1.LabelPosition;
+ Form1.LabeledEdit2.LabelPosition:=lpLeft;
  Form1.LabeledEdit1.Text:='';
- Form1.LabeledEdit2.Text:=Form1.LabeledEdit1.Text;
+ Form1.LabeledEdit2.Text:='';
 end;
 
 procedure language_setup();
@@ -101,7 +101,7 @@ end;
 
 procedure TForm1.Button1Click(Sender: TObject);
 begin
- wipe_disk(Form1.LabeledEdit1.Text,Form1.LabeledEdit2.Text);
+ wipe_disk(Form1.Process1,Form1.LabeledEdit1.Text,Form1.LabeledEdit2.Text);
 end;
 
 procedure TForm1.LabeledEdit1Change(Sender: TObject);
