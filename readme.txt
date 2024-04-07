@@ -2,7 +2,7 @@
 
                     This software made by Popov Evgeniy Alekseyevich
 
-                             Version 0.7.9
+                             Version 0.8
 
 System requirement
 
@@ -41,3 +41,4 @@ Change log
 0.7.5 - 0.7.6 - Small changes
 0.7.7 - 0.7.8 - Small bug fixed
 0.7.9 - Small changes
+0.8 - The program adapted to new version of FAST WIPER

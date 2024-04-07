@@ -19,7 +19,6 @@ type
     Process1: TProcessUTF8;
     procedure Button1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
-    procedure LabeledEdit1Change(Sender: TObject);
     procedure LabeledEdit2Change(Sender: TObject);
     procedure LabeledEdit2KeyPress(Sender: TObject; var Key: char);
   private
@@ -58,7 +57,7 @@ end;
 procedure window_setup();
 begin
  Application.Title:='FAST WIPER SHELL';
- Form1.Caption:='FAST WIPER SHELL 0.7.9';
+ Form1.Caption:='FAST WIPER SHELL 0.8';
  Form1.BorderStyle:=bsDialog;
  Form1.Font.Name:=Screen.MenuFont.Name;
  Form1.Font.Size:=14;
@@ -104,14 +103,9 @@ begin
  wipe_disk(Form1.Process1,Form1.LabeledEdit1.Text,Form1.LabeledEdit2.Text);
 end;
 
-procedure TForm1.LabeledEdit1Change(Sender: TObject);
-begin
- Form1.Button1.Enabled:=(Form1.LabeledEdit1.Text<>'') and (Form1.LabeledEdit2.Text<>'');
-end;
-
 procedure TForm1.LabeledEdit2Change(Sender: TObject);
 begin
- Form1.Button1.Enabled:=(Form1.LabeledEdit1.Text<>'') and (Form1.LabeledEdit2.Text<>'');
+ Form1.Button1.Enabled:=Form1.LabeledEdit2.Text<>'';
 end;
 
 procedure TForm1.LabeledEdit2KeyPress(Sender: TObject; var Key: char);
