@@ -2,33 +2,33 @@ object Form1: TForm1
   Left = 248
   Height = 128
   Top = 132
-  Width = 261
+  Width = 299
   Caption = 'Form1'
   ClientHeight = 128
-  ClientWidth = 261
+  ClientWidth = 299
   OnCreate = FormCreate
-  LCLVersion = '3.2.0.0'
+  LCLVersion = '3.6.0.0'
   object LabeledEdit1: TLabeledEdit
-    Left = 203
+    Left = 240
     Height = 23
     Top = 8
     Width = 48
     EditLabel.Height = 15
-    EditLabel.Width = 123
-    EditLabel.Caption = 'Amount of wipe passes'
+    EditLabel.Width = 143
+    EditLabel.Caption = 'Amount of the wipe passes'
     EditLabel.ParentColor = False
     LabelPosition = lpLeft
     TabOrder = 0
     Text = 'LabeledEdit1'
   end
   object LabeledEdit2: TLabeledEdit
-    Left = 147
+    Left = 160
     Height = 23
-    Top = 56
+    Top = 48
     Width = 48
     EditLabel.Height = 15
-    EditLabel.Width = 57
-    EditLabel.Caption = 'Drive letter'
+    EditLabel.Width = 67
+    EditLabel.Caption = 'A drive letter'
     EditLabel.ParentColor = False
     LabelPosition = lpLeft
     TabOrder = 1
@@ -37,9 +37,9 @@ object Form1: TForm1
     OnKeyPress = LabeledEdit2KeyPress
   end
   object Button1: TButton
-    Left = 88
+    Left = 96
     Height = 25
-    Top = 96
+    Top = 88
     Width = 75
     Caption = 'Wipe'
     TabOrder = 2
@@ -58,7 +58,7 @@ object Form1: TForm1
     WindowTop = 0
     WindowWidth = 0
     FillAttribute = 0
-    Left = 216
-    Top = 48
+    Left = 24
+    Top = 16
   end
 end

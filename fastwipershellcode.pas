@@ -57,7 +57,7 @@ end;
 procedure window_setup();
 begin
  Application.Title:='FAST WIPER SHELL';
- Form1.Caption:='FAST WIPER SHELL 0.8';
+ Form1.Caption:='FAST WIPER SHELL 0.8.1';
  Form1.BorderStyle:=bsDialog;
  Form1.Font.Name:=Screen.MenuFont.Name;
  Form1.Font.Size:=14;
@@ -78,8 +78,8 @@ end;
 procedure language_setup();
 begin
  Form1.Button1.Caption:='Wipe';
- Form1.LabeledEdit1.EditLabel.Caption:='Amount of wipe passes';;
- Form1.LabeledEdit2.EditLabel.Caption:='Drive letter';
+ Form1.LabeledEdit1.EditLabel.Caption:='Amount of the wipe passes';
+ Form1.LabeledEdit2.EditLabel.Caption:='A drive letter';
 end;
 
 procedure setup();
