@@ -10,24 +10,24 @@ uses
 
 type
 
-  { TForm1 }
+  { TMainWindow }
 
-  TForm1 = class(TForm)
-    Button1: TButton;
-    LabeledEdit1: TLabeledEdit;
-    LabeledEdit2: TLabeledEdit;
-    Process1: TProcessUTF8;
-    procedure Button1Click(Sender: TObject);
+  TMainWindow = class(TForm)
+    StartButton: TButton;
+    PassesField: TLabeledEdit;
+    DriveField: TLabeledEdit;
+    ToolRunner: TProcessUTF8;
+    procedure StartButtonClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
-    procedure LabeledEdit2Change(Sender: TObject);
-    procedure LabeledEdit2KeyPress(Sender: TObject; var Key: char);
+    procedure DriveFieldChange(Sender: TObject);
+    procedure DriveFieldKeyPress(Sender: TObject; var Key: char);
   private
     { private declarations }
   public
     { public declarations }
   end;
 
-var Form1: TForm1;
+var MainWindow: TMainWindow;
 
 implementation
 
@@ -57,29 +57,29 @@ end;
 procedure window_setup();
 begin
  Application.Title:='FAST WIPER SHELL';
- Form1.Caption:='FAST WIPER SHELL 0.8.2';
- Form1.BorderStyle:=bsDialog;
- Form1.Font.Name:=Screen.MenuFont.Name;
- Form1.Font.Size:=14;
+ MainWindow.Caption:='FAST WIPER SHELL 0.8.3';
+ MainWindow.BorderStyle:=bsDialog;
+ MainWindow.Font.Name:=Screen.MenuFont.Name;
+ MainWindow.Font.Size:=14;
 end;
 
 procedure interface_setup();
 begin
- Form1.Button1.Enabled:=False;
- Form1.LabeledEdit1.NumbersOnly:=True;
- Form1.LabeledEdit1.MaxLength:=3;
- Form1.LabeledEdit2.MaxLength:=1;
- Form1.LabeledEdit1.LabelPosition:=lpLeft;
- Form1.LabeledEdit2.LabelPosition:=lpLeft;
- Form1.LabeledEdit1.Text:='';
- Form1.LabeledEdit2.Text:='';
+ MainWindow.StartButton.Enabled:=False;
+ MainWindow.PassesField.NumbersOnly:=True;
+ MainWindow.PassesField.MaxLength:=3;
+ MainWindow.DriveField.MaxLength:=1;
+ MainWindow.PassesField.LabelPosition:=lpLeft;
+ MainWindow.DriveField.LabelPosition:=lpLeft;
+ MainWindow.PassesField.Text:='';
+ MainWindow.DriveField.Text:='';
 end;
 
 procedure language_setup();
 begin
- Form1.Button1.Caption:='Wipe';
- Form1.LabeledEdit1.EditLabel.Caption:='Amount of the wipe passes';
- Form1.LabeledEdit2.EditLabel.Caption:='A drive letter';
+ MainWindow.StartButton.Caption:='Wipe';
+ MainWindow.PassesField.EditLabel.Caption:='Amount of the wipe passes';
+ MainWindow.DriveField.EditLabel.Caption:='A drive letter';
 end;
 
 procedure setup();
@@ -91,24 +91,24 @@ end;
 
 {$R *.lfm}
 
-{ TForm1 }
+{ TMainWindow }
 
-procedure TForm1.FormCreate(Sender: TObject);
+procedure TMainWindow.FormCreate(Sender: TObject);
 begin
  setup();
 end;
 
-procedure TForm1.Button1Click(Sender: TObject);
+procedure TMainWindow.StartButtonClick(Sender: TObject);
 begin
- wipe_disk(Form1.Process1,Form1.LabeledEdit1.Text,Form1.LabeledEdit2.Text);
+ wipe_disk(MainWindow.ToolRunner,MainWindow.PassesField.Text,MainWindow.DriveField.Text);
 end;
 
-procedure TForm1.LabeledEdit2Change(Sender: TObject);
+procedure TMainWindow.DriveFieldChange(Sender: TObject);
 begin
- Form1.Button1.Enabled:=Form1.LabeledEdit2.Text<>'';
+ MainWindow.StartButton.Enabled:=MainWindow.DriveField.Text<>'';
 end;
 
-procedure TForm1.LabeledEdit2KeyPress(Sender: TObject; var Key: char);
+procedure TMainWindow.DriveFieldKeyPress(Sender: TObject; var Key: char);
 begin
  restrict_input(key);
 end;

@@ -1,51 +1,50 @@
-object Form1: TForm1
+object MainWindow: TMainWindow
   Left = 248
   Height = 128
   Top = 132
   Width = 299
-  Caption = 'Form1'
+  Caption = 'FAST WIPER SHELL'
   ClientHeight = 128
   ClientWidth = 299
-  LCLVersion = '4.0.0.1'
   OnCreate = FormCreate
-  object LabeledEdit1: TLabeledEdit
+  object PassesField: TLabeledEdit
     Left = 240
     Height = 23
     Top = 8
     Width = 48
-    EditLabel.Height = 15
+    EditLabel.Height = 23
     EditLabel.Width = 143
     EditLabel.Caption = 'Amount of the wipe passes'
     EditLabel.ParentColor = False
     LabelPosition = lpLeft
     TabOrder = 0
-    Text = 'LabeledEdit1'
+    Text = 'PassesField'
   end
-  object LabeledEdit2: TLabeledEdit
+  object DriveField: TLabeledEdit
     Left = 160
     Height = 23
     Top = 48
     Width = 48
-    EditLabel.Height = 15
+    EditLabel.Height = 23
     EditLabel.Width = 67
     EditLabel.Caption = 'A drive letter'
     EditLabel.ParentColor = False
     LabelPosition = lpLeft
     TabOrder = 1
-    Text = 'LabeledEdit2'
-    OnChange = LabeledEdit2Change
-    OnKeyPress = LabeledEdit2KeyPress
+    Text = 'DriveField'
+    OnChange = DriveFieldChange
+    OnKeyPress = DriveFieldKeyPress
   end
-  object Button1: TButton
+  object StartButton: TButton
     Left = 96
     Height = 25
     Top = 88
     Width = 75
     Caption = 'Wipe'
     TabOrder = 2
-    OnClick = Button1Click
+    OnClick = StartButtonClick
   end
-  object Process1: TProcessUTF8
+  object ToolRunner: TProcessUTF8
     Active = False
     Options = []
     Priority = ppNormal
