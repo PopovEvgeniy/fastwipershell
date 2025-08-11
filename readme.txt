@@ -2,7 +2,7 @@
 
                     This software was made by Popov Evgeniy Alekseyevich
 
-                             Version 0.8.3
+                             Version 0.8.3.1
 
 System requirements
 
@@ -16,11 +16,7 @@ Put the executable file of FAST WIPER in the FAST WIPER SHELL directory before t
 
 License
 
-This program is distributed under GNU GENERAL PUBLIC LICENSE.
-
-Contact
-
-You can send me a letter at tuzik87@inbox.ru.
+This program is distributed under the GNU GENERAL PUBLIC LICENSE.
 
 About program modification
 
@@ -47,3 +43,4 @@ Change log
 0.8.1.1-0.8.1.2: The documentation has been updated.
 0.8.2: The source code was recompiled under Lazarus 4.0 RC1.
 0.8.3: The source code was recompiled under Lazarus 4.0 RC3.
+0.8.3.1: The documentation has been updated.
