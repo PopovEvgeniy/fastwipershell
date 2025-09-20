@@ -2,36 +2,36 @@
 
                     This software was made by Popov Evgeniy Alekseyevich
 
-                             Version 0.8.3.1
+                             Version 0.8.4
 
-System requirements
+System requirements.
 
 Windows 2000 or higher for 32-bit systems
 Windows Vista or higher for 64-bit systems
 
-Program description
+The program description.
 
 This program is a graphic shell for FAST WIPER.
 Put the executable file of FAST WIPER in the FAST WIPER SHELL directory before the first start.
 
-License
+License.
 
 This program is distributed under the GNU GENERAL PUBLIC LICENSE.
 
-About program modification
+The source code.
 
 The code is included in the source.zip archive.
-It can be compiled under Lazarus 4.0 RC3 or higher.
+It can be compiled under Lazarus 4.2 or higher.
 
-Change log
+Version history.
 
-0.1: Initial version.
+0.1: The initial version.
 0.2-0.3: The small changes.
 0.4: A small bug has been fixed.
 0.5: The small changes.
 0.6-0.7: A small bug has been fixed.
 0.7.0.1: The documentation has been updated.
-0.7.0.2: 64-bit systems support has been added.
+0.7.0.2: 64-bit support has been added.
 0.7.1-0.7.4: The small changes.
 0.7.4.1: The documentation has been updated.
 0.7.5-0.7.6: The small changes.
@@ -44,3 +44,4 @@ Change log
 0.8.2: The source code was recompiled under Lazarus 4.0 RC1.
 0.8.3: The source code was recompiled under Lazarus 4.0 RC3.
 0.8.3.1: The documentation has been updated.
+0.8.4: The source code was recompiled under Lazarus 4.2.
