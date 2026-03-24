@@ -35,8 +35,8 @@ procedure wipe_disk(var runner:TProcessUTF8;const passes:string;const disk:strin
 begin
  runner.Executable:=ExtractFilePath(Application.ExeName)+'fastwiper.exe';
  runner.Parameters.Clear();
- runner.Parameters.Add(passes);
  runner.Parameters.Add(disk);
+ runner.Parameters.Add(passes);
  try
   runner.Execute();
  except
@@ -57,7 +57,7 @@ end;
 procedure window_setup();
 begin
  Application.Title:='FAST WIPER SHELL';
- MainWindow.Caption:='FAST WIPER SHELL 0.8.4';
+ MainWindow.Caption:='FAST WIPER SHELL 0.8.5';
  MainWindow.BorderStyle:=bsDialog;
  MainWindow.Font.Name:=Screen.MenuFont.Name;
  MainWindow.Font.Size:=14;
