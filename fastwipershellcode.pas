@@ -1,18 +1,24 @@
 unit fastwipershellcode;
 
-{$mode objfpc}{$H+}
+{
+ This sofware was made by Popov Evgeniy Alekseyevich.
+ It is distributed under the GNU GENERAL PUBLIC LICENSE (Version 2 or higher).
+}
+
+{$mode objfpc}
+{$H+}
 
 interface
 
-uses
-  Classes, SysUtils, LCLType, UTF8Process, Forms, Controls,
-  Graphics, ExtCtrls, StdCtrls;
+uses Classes, SysUtils, LCLType, UTF8Process, Forms, Controls, Graphics,
+  ExtCtrls, StdCtrls, Menus;
 
 type
 
   { TMainWindow }
 
   TMainWindow = class(TForm)
+    EmptyMenu: TPopupMenu;
     StartButton: TButton;
     PassesField: TLabeledEdit;
     DriveField: TLabeledEdit;
@@ -20,9 +26,11 @@ type
     procedure StartButtonClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure DriveFieldChange(Sender: TObject);
-    procedure DriveFieldKeyPress(Sender: TObject; var Key: char);
   private
-    { private declarations }
+    procedure window_setup();
+    procedure interface_setup();
+    procedure language_setup();
+    procedure setup();
   public
     { public declarations }
   end;
@@ -30,6 +38,43 @@ type
 var MainWindow: TMainWindow;
 
 implementation
+
+procedure TMainWindow.window_setup();
+begin
+ Application.Title:='FAST WIPER SHELL';
+ Self.Caption:='FAST WIPER SHELL 0.8.8';
+ Self.BorderStyle:=bsDialog;
+ Self.Font.Name:=Screen.MenuFont.Name;
+ Self.Font.Size:=14;
+end;
+
+procedure TMainWindow.interface_setup();
+begin
+ Self.StartButton.Enabled:=False;
+ Self.PassesField.NumbersOnly:=True;
+ Self.PassesField.MaxLength:=3;
+ Self.DriveField.MaxLength:=1;
+ Self.PassesField.LabelPosition:=lpLeft;
+ Self.DriveField.LabelPosition:=lpLeft;
+ Self.PassesField.Text:='';
+ Self.DriveField.Text:='';
+ Self.PassesField.PopupMenu:=Self.EmptyMenu;
+ Self.DriveField.PopupMenu:=Self.EmptyMenu;
+end;
+
+procedure TMainWindow.language_setup();
+begin
+ Self.StartButton.Caption:='Wipe';
+ Self.PassesField.EditLabel.Caption:='Amount of the wipe passes';
+ Self.DriveField.EditLabel.Caption:='A drive letter';
+end;
+
+procedure TMainWindow.setup();
+begin
+ Self.window_setup();
+ Self.interface_setup();
+ Self.language_setup();
+end;
 
 procedure wipe_disk(var runner:TProcessUTF8;const passes:string;const disk:string);
 begin
@@ -45,72 +90,23 @@ begin
 
 end;
 
-procedure restrict_input(var key:char);
-begin
- if not (LowerCase(key) in ['a'..'z']) then
- begin
-  if ord(key)<>VK_BACK then key:=#0;
- end;
-
-end;
-
-procedure window_setup();
-begin
- Application.Title:='FAST WIPER SHELL';
- MainWindow.Caption:='FAST WIPER SHELL 0.8.5';
- MainWindow.BorderStyle:=bsDialog;
- MainWindow.Font.Name:=Screen.MenuFont.Name;
- MainWindow.Font.Size:=14;
-end;
-
-procedure interface_setup();
-begin
- MainWindow.StartButton.Enabled:=False;
- MainWindow.PassesField.NumbersOnly:=True;
- MainWindow.PassesField.MaxLength:=3;
- MainWindow.DriveField.MaxLength:=1;
- MainWindow.PassesField.LabelPosition:=lpLeft;
- MainWindow.DriveField.LabelPosition:=lpLeft;
- MainWindow.PassesField.Text:='';
- MainWindow.DriveField.Text:='';
-end;
-
-procedure language_setup();
-begin
- MainWindow.StartButton.Caption:='Wipe';
- MainWindow.PassesField.EditLabel.Caption:='Amount of the wipe passes';
- MainWindow.DriveField.EditLabel.Caption:='A drive letter';
-end;
-
-procedure setup();
-begin
- window_setup();
- interface_setup();
- language_setup();
-end;
-
 {$R *.lfm}
 
 { TMainWindow }
 
 procedure TMainWindow.FormCreate(Sender: TObject);
 begin
- setup();
+ Self.setup();
 end;
 
 procedure TMainWindow.StartButtonClick(Sender: TObject);
 begin
- wipe_disk(MainWindow.ToolRunner,MainWindow.PassesField.Text,MainWindow.DriveField.Text);
+ wipe_disk(Self.ToolRunner,Self.PassesField.Text,Self.DriveField.Text);
 end;
 
 procedure TMainWindow.DriveFieldChange(Sender: TObject);
 begin
- MainWindow.StartButton.Enabled:=MainWindow.DriveField.Text<>'';
-end;
-
-procedure TMainWindow.DriveFieldKeyPress(Sender: TObject; var Key: char);
-begin
- restrict_input(key);
+ Self.StartButton.Enabled:=Self.DriveField.Text<>'';
 end;
 
 end.

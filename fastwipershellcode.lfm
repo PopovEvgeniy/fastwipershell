@@ -34,7 +34,6 @@ object MainWindow: TMainWindow
     TabOrder = 1
     Text = 'DriveField'
     OnChange = DriveFieldChange
-    OnKeyPress = DriveFieldKeyPress
   end
   object StartButton: TButton
     Left = 96
@@ -60,5 +59,9 @@ object MainWindow: TMainWindow
     FillAttribute = 0
     Left = 24
     Top = 16
+  end
+  object EmptyMenu: TPopupMenu
+    Left = 24
+    Top = 75
   end
 end

@@ -2,7 +2,7 @@
 
                     This software was made by Popov Evgeniy Alekseyevich
 
-                             Version 0.8.5
+                             Version 0.8.8
 
 System requirements.
 
@@ -46,3 +46,4 @@ Version history.
 0.8.3.1: The documentation has been updated.
 0.8.4: The source code was recompiled under Lazarus 4.2.
 0.8.5: The program has been adapted to the new version of FAST WIPER.
+0.8.6-0.8.8: The small changes.
