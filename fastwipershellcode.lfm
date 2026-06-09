@@ -20,9 +20,10 @@ object MainWindow: TMainWindow
     LabelPosition = lpLeft
     TabOrder = 0
     Text = 'PassesField'
+    OnChange = PassesFieldChange
   end
   object DriveField: TLabeledEdit
-    Left = 160
+    Left = 120
     Height = 23
     Top = 48
     Width = 48
@@ -34,6 +35,7 @@ object MainWindow: TMainWindow
     TabOrder = 1
     Text = 'DriveField'
     OnChange = DriveFieldChange
+    OnKeyPress = DriveFieldKeyPress
   end
   object StartButton: TButton
     Left = 96
@@ -57,11 +59,11 @@ object MainWindow: TMainWindow
     WindowTop = 0
     WindowWidth = 0
     FillAttribute = 0
-    Left = 24
-    Top = 16
+    Left = 216
+    Top = 80
   end
   object EmptyMenu: TPopupMenu
     Left = 24
-    Top = 75
+    Top = 80
   end
 end

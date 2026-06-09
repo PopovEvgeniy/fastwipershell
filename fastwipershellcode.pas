@@ -10,8 +10,7 @@ unit fastwipershellcode;
 
 interface
 
-uses Classes, SysUtils, LCLType, UTF8Process, Forms, Controls, Graphics,
-  ExtCtrls, StdCtrls, Menus;
+uses Classes, SysUtils, LCLType, UTF8Process, Forms, Controls, Graphics, ExtCtrls, StdCtrls, Menus;
 
 type
 
@@ -23,9 +22,11 @@ type
     PassesField: TLabeledEdit;
     DriveField: TLabeledEdit;
     ToolRunner: TProcessUTF8;
+    procedure PassesFieldChange(Sender: TObject);
     procedure StartButtonClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure DriveFieldChange(Sender: TObject);
+    procedure DriveFieldKeyPress(Sender: TObject; var Key: char);
   private
     procedure window_setup();
     procedure interface_setup();
@@ -42,7 +43,7 @@ implementation
 procedure TMainWindow.window_setup();
 begin
  Application.Title:='FAST WIPER SHELL';
- Self.Caption:='FAST WIPER SHELL 0.8.8';
+ Self.Caption:='FAST WIPER SHELL 0.9';
  Self.BorderStyle:=bsDialog;
  Self.Font.Name:=Screen.MenuFont.Name;
  Self.Font.Size:=14;
@@ -76,6 +77,15 @@ begin
  Self.language_setup();
 end;
 
+procedure restrict_input(var key:char);
+begin
+ if not (LowerCase(key) in ['a'..'z']) then
+ begin
+  if ord(key)<>VK_BACK then key:=#0;
+ end;
+
+end;
+
 procedure wipe_disk(var runner:TProcessUTF8;const passes:string;const disk:string);
 begin
  runner.Executable:=ExtractFilePath(Application.ExeName)+'fastwiper.exe';
@@ -104,9 +114,23 @@ begin
  wipe_disk(Self.ToolRunner,Self.PassesField.Text,Self.DriveField.Text);
 end;
 
+procedure TMainWindow.PassesFieldChange(Sender: TObject);
+begin
+ if Self.PassesField.Text<>'' then
+ begin
+  if StrToIntDef(Self.PassesField.Text,0)<=0 then Self.PassesField.Clear();
+ end;
+
+end;
+
 procedure TMainWindow.DriveFieldChange(Sender: TObject);
 begin
  Self.StartButton.Enabled:=Self.DriveField.Text<>'';
+end;
+
+procedure TMainWindow.DriveFieldKeyPress(Sender: TObject; var Key: char);
+begin
+ restrict_input(key);
 end;
 
 end.
