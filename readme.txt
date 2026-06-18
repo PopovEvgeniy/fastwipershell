@@ -2,7 +2,7 @@
 
                     This software was made by Popov Evgeniy Alekseyevich
 
-                             Version 0.9
+                             Version 1.0
 
 System requirements.
 
@@ -21,7 +21,7 @@ This program is distributed under the GNU GENERAL PUBLIC LICENSE.
 The source code.
 
 The code is included in the source.zip archive.
-It can be compiled under Lazarus 4.6 or higher.
+It can be compiled under Lazarus 4.8 or higher.
 
 Version history.
 
@@ -48,3 +48,4 @@ Version history.
 0.8.5: The program has been adapted to the new version of FAST WIPER.
 0.8.6-0.8.8: The small changes.
 0.8.9-0.9: The user input validation has improved.
+1.0: The user interface has improved.
