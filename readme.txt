@@ -2,7 +2,7 @@
 
                     This software was made by Popov Evgeniy Alekseyevich
 
-                             Version 1.0
+                             Version 1.1
 
 System requirements.
 
@@ -48,4 +48,4 @@ Version history.
 0.8.5: The program has been adapted to the new version of FAST WIPER.
 0.8.6-0.8.8: The small changes.
 0.8.9-0.9: The user input validation has improved.
-1.0: The user interface has improved.
+1.0-1.1: The user interface has improved.
